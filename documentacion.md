@@ -972,36 +972,34 @@ En este caso son dos llamadas a APIs y no nos importa si la primera da error que
 ### Recursos sobre operador de extensión
 
 1. **MDN Web Docs**:
-
-- La documentación oficial de JavaScript proporcionada por Mozilla Developer Network (MDN) ofrece una explicación detallada sobre el operador de propagación, incluyendo ejemplos de uso y casos de uso comunes.
-- [Documentación sobre el operador de propagación en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+   - La documentación oficial de JavaScript proporcionada por Mozilla Developer Network (MDN) ofrece una explicación detallada sobre el operador de propagación, incluyendo ejemplos de uso y casos de uso comunes.
+   - [Documentación sobre el operador de propagación en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 
 ### Recursos sobre POO
 
 1. **Pildoras informáticas**:
-- Video de javaScript proporcionado por Pildoras informáticas:
-- [Video 9 sobre POO](https://www.pildorasinformaticas.es/unit/javascript-desde-0-poo-i-video-9/)
+   - Video de javaScript proporcionado por Pildoras informáticas:
+   - [Video 9 sobre POO](https://www.pildorasinformaticas.es/unit/javascript-desde-0-poo-i-video-9/)
 
-1. **Gekks.ms**:
-- Documentación de JavaScript proporcionada por geeks.ms sobre POO:
-- [Documentación sobre POO](https://geeks.ms/etomas/2013/10/25/es-javascript-orientado-a-objetos/)
+2. **Gekks.ms**:
+   - Documentación de JavaScript proporcionada por geeks.ms sobre POO:
+   - [Documentación sobre POO](https://geeks.ms/etomas/2013/10/25/es-javascript-orientado-a-objetos/)
 
 
 ### Recursos sobre Promise
 
 1. **MDN Web Docs**:
-- La documentación oficial de JavaScript proporcionada por Mozilla Developer Network (MDN) ofrece una explicación detallada sobre promesas.
-- [Documentación sobre promesas en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-
+   - La documentación oficial de JavaScript proporcionada por Mozilla Developer Network (MDN) ofrece una explicación detallada sobre promesas.
+   - [Documentación sobre promesas en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 2. **Salesforce**:
-- Documentación sobre promesas de JavaScript.
-- [Documentación sobre promesas en salesforce](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_promises.htm)
+   - Documentación sobre promesas de JavaScript.
+   - [Documentación sobre promesas en salesforce](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_promises.htm)
 
 ### Recursos sobre async y await
 
 1. **MDN Web Docs**:
-- La documentación oficial de JavaScript proporcionada por Mozilla Developer Network (MDN) ofrece una explicación detallada
-- [Documentación sobre async y await en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+   - La documentación oficial de JavaScript proporcionada por Mozilla Developer Network (MDN) ofrece una explicación detallada
+   - [Documentación sobre async y await en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 
 
