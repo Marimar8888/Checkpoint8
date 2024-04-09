@@ -354,14 +354,14 @@ Ejemplo de código:
 Imagina que tienes un objeto y quieres crear un nuevo objeto que contenga todas las propiedades del objeto original y algunas propiedades adicionales. Puedes usar el operador de extensión para lograrlo.
 
 ```javascript
-// Objeto original
-const persona = { nombre: 'Juan', edad: 30 };
+    // Objeto original
+    const persona = { nombre: 'Juan', edad: 30 };
 
-// Crear un nuevo objeto con todas las propiedades del objeto original y una propiedad adicional
-const nuevaPersona = { ...persona, ciudad: 'Madrid' };
+    // Crear un nuevo objeto con todas las propiedades del objeto original y una propiedad adicional
+    const nuevaPersona = { ...persona, ciudad: 'Madrid' };
 
-console.log(nuevaPersona);
-// Output: { nombre: 'Juan', edad: 30, ciudad: 'Madrid' }
+    console.log(nuevaPersona);
+    // Output: { nombre: 'Juan', edad: 30, ciudad: 'Madrid' }
 ```
 
 El operador de extensión (...) en JavaScript facilita la manipulación y combinación de datos al permitir expandir elementos de objetos o matrices en un nuevo contexto.
@@ -388,30 +388,30 @@ En este ejemplo, la función sumar utiliza el operador de extensión `...numeros
 Creo Una variable llamada `carritoDeCompras` y dentro de esta variable, simplemente tenemos varios IDs de productos. Si estás construyendo algún tipo de aplicación en React o Angular, podrías tener un tipo de funcionalidad donde un usuario puede hacer clic en un botón de agregar al carrito y luego lo cargarías en algún tipo de colección como esta.
 
 ```javascript
-// Combinando Arrays
-let carritoDeCompras = [345, 375, 765, 123];
+    // Combinando Arrays
+    let carritoDeCompras = [345, 375, 765, 123];
 ```
 Imaginemos que tu carrito de compras está lleno de estos cuatro IDs de productos y luego digamos que el usuario dice que quiere seguir comprando. Y así que tienen una nueva variable llamada `nuevosItems` y voy a establecerla simplemente en unos cuantos IDs de productos más, así:
 
 ```javascript
-let nuevosItems = [98, 123];
+    let nuevosItems = [98, 123];
 ```
 Si el usuario quisiera agregar todos estos nuevos artículos al carrito, hay varias formas de hacderlo:
 
 __Formas antiguas__ 
 
 ```javascript
-shoppingCart.push(nuevosItems);
+    shoppingCart.push(nuevosItems);
 
-shoppingCart.push(nuevosItems);
-console.log(shoppingCart); // [ 345, 375, 765, 123, [ 93, 123 ] ]
+    shoppingCart.push(nuevosItems);
+    console.log(shoppingCart); // [ 345, 375, 765, 123, [ 93, 123 ] ]
 ```
 
 Lo que hace push hace es agregar un nuevo elemento a un array. Pero los arrays de JavaScript puedes tener múltiples tipos de datos. Arrays anidados, objetos y todo tipo de elementos diferentes. Por eso JavaScript no entiende cuando quieres agregar un nuevo array. No se da cuenta de que simplemente quieres agregar algunos elementos más. Y ahí es donde puede entrar en juego el operador de expansión y permitirte hacer eso.
 
 ```javascript
-shoppingCart.push(...newItems);
-console.log(shoppingCart);  //[345, 375, 765, 123, 98, 123]
+    shoppingCart.push(...newItems);
+    console.log(shoppingCart);  //[345, 375, 765, 123, 98, 123]
 ```
 Ahora ha tomado estos elementos y los distribuye para expandirlos.  Y en lugar de estar dentro de este array, simplemente busca los elementos en el array y los agrega.
 
@@ -420,7 +420,7 @@ Ahora ha tomado estos elementos y los distribuye para expandirlos.  Y en lugar d
 Un proceso muy común dentro de programas basados en React o Angular es que no se supone que debes hacer cambios en una estructura de datos. En otras palabras, si tienes una estructura, una vez más, como `shoppingCart`. Si digo `const shoppingCart` y simplemente voy a tomar mis IDs de productos del primer `shoppingCart`.
 
 ```javascript
-const shoppingCart = [345, 375, 765, 123];
+    const shoppingCart = [345, 375, 765, 123];
 ```
 La convención común es que ni siquiera harías cambios en `shoppingCart`. Y esa es parte de la razón por la que se debería usar variables `let` en lugar de una variable `const`.
 
@@ -433,11 +433,11 @@ Si quieres usar una estructura de datos y luego hacer cambios en ella, lo que qu
 __Forma que no funciona__
 
 ```javascript
-const shoppingCart = [345, 375, 765, 123];
-const updatedCart = shoppingCart;
-updatedCart.push(5);
-console.log(updatedCart);    // [345, 375, 765, 123, 5]
-console.log(shoppingCart);    // [345, 375, 765, 123, 5]
+    const shoppingCart = [345, 375, 765, 123];
+    const updatedCart = shoppingCart;
+    updatedCart.push(5);
+    console.log(updatedCart);    // [345, 375, 765, 123, 5]
+    console.log(shoppingCart);    // [345, 375, 765, 123, 5]
 ```
 
 En este caso no funciona, porque realmente no estoy haciendo un acopia del array, sino que le estoy pasando una referencia del originarl `shoppingCart` y es por eso que modifica el original y el nuevo. Y esto es lo que no hay que hacer.
@@ -445,41 +445,41 @@ En este caso no funciona, porque realmente no estoy haciendo un acopia del array
 __Forma que funciona__ antigua (slice())
 
 ```javascript
-const shoppingCart = [345, 375, 765, 123];
-const updatedCart = shoppingCart.slice();
-updatedCart.push(5);
-console.log(updatedCart);    // [345, 375, 765, 123, 5]
-console.log(shoppingCart);    // [345, 375, 765, 123]
+    const shoppingCart = [345, 375, 765, 123];
+    const updatedCart = shoppingCart.slice();
+    updatedCart.push(5);
+    console.log(updatedCart);    // [345, 375, 765, 123, 5]
+    console.log(shoppingCart);    // [345, 375, 765, 123]
 ```
 Es una forma antigua de usar, pero todavía hay muchos desarrolladores que la utilizan. Slice realiza una copia exacta del original y por eso no la modifica.
 
 __Forma que funciona__  moderna con operador de expansión
 
 ```javascript
-const shoppingCart = [345, 375, 765, 123];
-const updatedCart = [...shoppingCart];
-updatedCart.push(5);
-console.log(updatedCart);    // [345, 375, 765, 123, 5]
-console.log(shoppingCart);    // [345, 375, 765, 123]
+    const shoppingCart = [345, 375, 765, 123];
+    const updatedCart = [...shoppingCart];
+    updatedCart.push(5);
+    console.log(updatedCart);    // [345, 375, 765, 123, 5]
+    console.log(shoppingCart);    // [345, 375, 765, 123]
 ```
 ### Tercer ejemplo usar con los argumentos de funciones
 
 Usando por ejemplo la biblioteca `Math`.
 
 ```javascript
-console.log(Math.max(1, 5, 1, 10, 2, 3));   //10
+    console.log(Math.max(1, 5, 1, 10, 2, 3));   //10
 ```
 
 Ahora, si tuvieras una gran colección de valores y quisieras ver cuál es el más alto.
 
 ```javascript
-const orderTotals = [1, 5, 1, 10, 2, 3];
+    const orderTotals = [1, 5, 1, 10, 2, 3];
 ```
 Y queremos ver cuál es el más grande y intentamos pasar la variable que tiene dicha colección, nos dará un error.
 
 ```javascript
-const orderTotals = [1, 5, 1, 10, 2, 3];
-console.log(Math.max(orderTotals));  // NaN "no es un número"
+    const orderTotals = [1, 5, 1, 10, 2, 3];
+    console.log(Math.max(orderTotals));  // NaN "no es un número"
 ```
 
 Lo que estamos haciendo con `orderTotals` es que solo estamos pasando un argumento. Solo estamos pasando un argumento y ni siquiera es un número, es un array. Y por eso `Math.max` no sabe qué hacer con él. Y esa es la razón por la que no es un número.
@@ -487,8 +487,8 @@ Lo que estamos haciendo con `orderTotals` es que solo estamos pasando un argumen
 Con el operador de expansión, lo que va a hacer es tomar este array y lo va a expandir. Va a tomar cada elemento en el array y luego lo convertirá en un conjunto de argumentos de función. Así que si guardo y ejecuto, verás que ahora volvemos a obtener el valor correcto.
 
 ```javascript
-const orderTotals = [1, 5, 1, 10, 2, 3];
-console.log(Math.max(...orderTotals));
+    const orderTotals = [1, 5, 1, 10, 2, 3];
+    console.log(Math.max(...orderTotals));
 ```
 
 ### Cuarto ejemplo usar el operador de expansión para trabajar con la deconstrucción de objetos. 
@@ -496,31 +496,31 @@ console.log(Math.max(...orderTotals));
 Crear un objeto con una alineación de béisbol:
 
 ```javascript
-const pitchers = {
-  starter: 'Verlander',
-  closer: 'Giles',
-  relief_1: 'Morton',
-  relief_2: 'Gregerson'
-}
+    const pitchers = {
+    starter: 'Verlander',
+    closer: 'Giles',
+    relief_1: 'Morton',
+    relief_2: 'Gregerson'
+    }
 ```
 Y existe la posibilidad de que podamos tener cualquier cantidad de lanzadores de relevo (relief) si estás construyendo esto para una aplicación de registro de puntuaciones o algo así. Entonces no vas a saber cuántos lanzadores de relevo tienes en un equipo dado, cambia prácticamente a diario. Así que no puedes codificar esto, sabes que vas a tener un titular, sabes que vas a tener un cerrador y tienes algunas reglas fijas y sólidas. Pero luego hay una serie de elementos que van a ser variables, que van a cambiar cada vez. Y ahí es donde el operador de expansión puede ayudarnos a realizar la deconstrucción. 
 
 A grego llaves delante y así es como podemos realizar la deconstrucción de objetos, hemos hablado sobre la construcción de variables y arrays. Esto es específicamente cómo podemos trabajar con la deconstrucción de objetos. Agregando las claves starter y closer y lo imprimo por consola:
 
 ```javascript
-const { starter, closer, ...relieves } = {
-  starter: 'Verlander',
-  closer: 'Giles',
-  relief_1: 'Morton',
-  relief_2: 'Gregerson'
-}
+    const { starter, closer, ...relieves } = {
+    starter: 'Verlander',
+    closer: 'Giles',
+    relief_1: 'Morton',
+    relief_2: 'Gregerson'
+    }
 
-console.log(starter);
-console.log(closer);
-console.log(relieves);
-// "Verlander"
-// "Giles"
-// { relief_1: 'Morton', relief_2: 'Gregerson' }
+    console.log(starter);
+    console.log(closer);
+    console.log(relieves);
+    // "Verlander"
+    // "Giles"
+    // { relief_1: 'Morton', relief_2: 'Gregerson' }
 ```
 
 ## 6.- ¿Qué es la programación orientada a objetos?
